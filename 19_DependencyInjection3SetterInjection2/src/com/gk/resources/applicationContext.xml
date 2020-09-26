@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="addressBean" class="com.gk.beans.Address">
+		<property name="pno" value="6" />
+		<property name="street" value="Dhar Kothi" />
+		<property name="city" value="Indore" />
+		<property name="state" value="Madhya Pradesh" />
+		<property name="country" value="India" />
+	</bean>
+	<bean id="studentBean" class="com.gk.beans.Student">
+		<property name="sid" value="S-1" />
+		<property name="sname" value="Pranay Singh" />
+
+		<!-- If we want to inject User defined data types then we have to use "ref" 
+			attribute -->
+		<property name="saddr">
+			<ref bean="addressBean" />
+		</property>
+		<!-- Alternative Way <property name="saddr" ref="addressBean" /> -->
+		<!-- If we want to inject List of elements in beans, use <list> tag in 
+			<property> tag -->
+		<property name="squal">
+			<list>
+				<value>B.Tech</value>
+				<value>M.Tech</value>
+				<value>P.H.D</value>
+			</list>
+		</property>
+		<!-- If we want to inject List of elements in beans, use <Set> tag in <property> 
+			tag -->
+		<property name="scourses">
+			<set>
+				<value>Core Java</value>
+				<value>Advance Java</value>
+				<value>Hibernate</value>
+				<value>Spring</value>
+				<value>WebServices</value>
+			</set>
+		</property>
+		<!-- If we want to inject Map of elements in Bean we have to provide Key-Value 
+			pairs in configuration file by using <map> and <entry> tags under <property> 
+			tag -->
+		<property name="scourse_And_Faculty">
+			<map>
+				<entry key="Core Java" value="Durga" />
+				<entry key="Advance Java" value="Neeraj" />
+				<entry key="Hibernate" value="Ajay" />
+				<entry key="Spring" value="Nagoor" />
+				<entry key="WebService" value="John" />
+			</map>
+		</property>
+		<!-- If we want to inject Properties of elements in Bean, we have to provide 
+			Key-Value pairs in configuration file by using <props> and <prop> tags under 
+			<property> tag. -->
+		<property name="scourse_And_Cost">
+			<props>
+				<prop key="Core Java">6000</prop>
+				<prop key="Advance Java">10000</prop>
+				<prop key="Hibernate">12000</prop>
+				<prop key="Spring">15000</prop>
+				<prop key="WebService">20000</prop>
+			</props>
+		</property>	
+
+	</bean>
+</beans>	
