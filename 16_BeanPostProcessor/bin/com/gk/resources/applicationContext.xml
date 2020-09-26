@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="account" class="com.gk.beans.Account" init-method="init" destroy-method="destroy">
+		<property name="accNo" value="abc123" />
+		<property name="accHolderName" value="Pranay Singh" />
+		<property name="accType" value="Current" />
+		<property name="balance" value="200000" />
+		<property name="accHolderEmail"
+			value="pranay.singh.1393" />
+		<property name="accHolderMobileNo" value="9806871458" />
+	</bean>
+	 <!-- Post Processing bean --> 
+	<bean class="com.gk.processor.AccountPostProcessorImpl"/>
+</beans>        
