@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employee" class="com.gk.beans.Employee">
+		<property name="eid" value="E-1" />
+		<property name="ename" value="Pranay Singh" />
+		<property name="esal" value="100000" />
+		<property name="eaddr" value="Indore" />
+		
+		<!-- Nested Bean -->
+		<property name="acc">
+			<bean id="account" class="com.gk.beans.Account">
+				<property name="accNo" value="abc123" />
+				<property name="accName" value="Pranay Singh" />
+				<property name="accType" value="Savings" />
+				<property name="balance" value="200000" />
+			</bean>
+		</property>
+	</bean>
+</beans>        
