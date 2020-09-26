@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Contained Object -->
+	<bean id="courseBean" class="com.gk.beans.Course" scope="prototype">
+		<property name="cid" value="c-1" />
+		<property name="cname" value="core java" />
+		<property name="ccost" value="8000" />
+	</bean>
+	<!-- Container object -->
+	<bean id="studentBean" class="com.gk.beans.Student" scope="singleton">
+		<property name="sid" value="s-1" />
+		<property name="sname" value="Pranay Singh" />
+		<property name="saddr" value="Indore" />
+		<property name="scourse" ref="courseBean" />
+	</bean>
+
+</beans>
