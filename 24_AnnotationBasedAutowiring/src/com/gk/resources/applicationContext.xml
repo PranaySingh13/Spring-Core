@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- By this tag,all annotations will be activated in whole spring application -->
+	<context:annotation-config />
+
+	<bean id="course1" class="com.gk.beans.Course">
+		<property name="cId" value="C-1" />
+		<property name="cName" value="Core Java" />
+		<property name="cCost" value="10000" />
+	</bean>
+	
+	<bean id="course2" class="com.gk.beans.Course">
+		<property name="cId" value="C-2" />
+		<property name="cName" value="Advance Java" />
+		<property name="cCost" value="20000" />
+	</bean>
+	
+	<bean id="studentBean1" class="com.gk.beans.Student1">
+		<property name="sId" value="S-1" />
+		<property name="sName" value="Pranay Singh" />
+	</bean>
+	<bean id="studentBean2" class="com.gk.beans.Student2">
+		<constructor-arg value="S-2" index="0" />
+		<constructor-arg value="Apoorva Singh" index="1" />
+	</bean>
+</beans>
