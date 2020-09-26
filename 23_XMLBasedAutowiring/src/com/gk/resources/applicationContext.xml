@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Autowiring By Name(It follows internally Setter Injection)
+	(It matches dependent objects reference variables with id attribute values of bean) 
+	
+	<bean id="eacc" class="com.gk.beans.Account">
+		<property name="accNo" value="A-1" />
+		<property name="accName" value="Pranay Singh" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="400000" />
+	</bean>
+	<bean id="eaddr" class="com.gk.beans.Address">
+		<property name="plotNo" value="6" />
+		<property name="street" value="Dhar Kothi" />
+		<property name="city" value="Indore" />
+		<property name="state" value="M.P." />
+		<property name="country" value="India" />
+	</bean>
+
+	<bean id="empBean1" class="com.gk.beans.Employee" autowire="byName">
+		<property name="eid" value="E-1" />
+		<property name="ename" value="Pranay Singh" />
+		<property name="esal" value="150000" />
+	</bean>
+	
+	-->
+	
+	<!-- Autowiring By Type(It follows internally Setter Injection)
+	(It matches dependent objects types with unique class attribute values.
+	Here id attribute values can be different with dependent object reference variables) -->
+	
+	<bean id="accBean1" class="com.gk.beans.Account">
+		<property name="accNo" value="A-1" />
+		<property name="accName" value="Pranay Singh" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="400000" />
+	</bean>
+	<!-- If more than one bean configuration is present of same object type it will raise an NoSuchUniqueBeanException.
+	To overcome an Exception.use autowire-candidate=false which stops the bean participation in autowiring -->
+	<bean id="accBean2" class="com.gk.beans.Account" autowire-candidate="false">
+		<property name="accNo" value="A-2" />
+		<property name="accName" value="Apoorva Singh" />
+		<property name="accType" value="Current" />
+		<property name="balance" value="800000" />
+	</bean>
+	<bean id="addBean" class="com.gk.beans.Address">
+		<property name="plotNo" value="6" />
+		<property name="street" value="Dhar Kothi" />
+		<property name="city" value="Indore" />
+		<property name="state" value="M.P." />
+		<property name="country" value="India" />
+	</bean>
+	
+	<bean id="empBean1" class="com.gk.beans.Employee1" autowire="byType" >
+		<property name="eid" value="ET-1" />
+		<property name="ename" value="Pranay Singh" />
+		<property name="esal" value="150000" />
+	</bean>
+
+	<!-- Autowiring by Constructor(It follows internally byType autowiring alongwith Constructor Injection) -->
+	<bean id="empBean2" class="com.gk.beans.Employee2" autowire="constructor" >
+		<constructor-arg value="EC-1" index="0" />
+		<constructor-arg value="Kailash Singh" index="1"/>
+		<constructor-arg value="300000" index="2"/>
+	</bean>
+	
+</beans>
