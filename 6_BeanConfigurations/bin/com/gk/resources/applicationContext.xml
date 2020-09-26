@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="empbean" name="empbeanname" class="com.gk.beans.Employee">
+		<property name="name" value="Pranay"></property>
+	</bean>
+	
+	<!-- In defining the multiple name to beans use alias -->
+	<alias name="empbeanname" alias="empbeanname1"/>
+	<alias name="empbeanname1" alias="empbeanname2"/>
+	
+	<!-- another way to define multiple alias -->
+	<!-- 
+	<bean name="empbeanname1,empbeanname2,empbeanname3" class="com.gk.beans.Employee">
+	<bean name="empbeanname1;empbeanname2;empbeanname3" class="com.gk.beans.Employee">
+	<bean name="empbeanname1 empbeanname2 empbeanname3" class="com.gk.beans.Employee">
+	 -->
+	
+</beans>
