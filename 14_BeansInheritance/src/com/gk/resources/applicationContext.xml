@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="wishbean" class="com.gk.beans.WishBean" init-method="init" destroy-method="destroy">
+		<property name="name" value="Pranay Singh" />
+		<property name="message" value="Good Morning!" />
+	</bean>
+	<!--
+	<bean id="wishbean" abstract="true" init-method="init" destroy-method="destroy">
+		<property name="name" value="Pranay Singh" />
+		<property name="message" value="Good Morning!" />
+	</bean>
+	 -->
+	<bean id="hellobean" class="com.gk.beans.HelloBean" parent="wishbean">
+		<property name="message" value="Good Afternoon!" />
+	</bean>
+	<bean id="welcomebean" class="com.gk.beans.WelcomeBean" parent="wishbean">
+		<property name="message" value="Good Evening!" />
+	</bean>
+</beans>        
