@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="course1" class="com.gk.beans.Course"/>
+
+	<bean id="course2" class="com.gk.beans.Course">
+		<constructor-arg value="1" />
+	</bean>
+	
+	<bean id="course3" class="com.gk.beans.Course">
+		<constructor-arg value="1" />
+		<constructor-arg value="Corporate Java" />
+	</bean>
+	<!-- 
+	As we can see that we do not need the name attribute in the constructor-arg 
+	tag because in CI we can initialize fields data in the same order as arguments 
+	provided on creating constructor in bean class or use the index attribute for initializing
+	if the constructor-arg order is different.
+	with the index attribute we have the liberty to have same or different datatype variables. 
+	-->
+		
+	<bean id="course4" class="com.gk.beans.Course">
+		<constructor-arg value="Corporate Java" index="1" />
+		<constructor-arg value="1" index="0" />
+		<constructor-arg value="40000.0" index="2" />
+	</bean>
+	
+	<!-- We can also provide type attribute if the all the arguments are different type(order can be different) -->
+	<bean id="course5" class="com.gk.beans.Course">
+		<constructor-arg value="Corporate Java" type="String" />
+		<constructor-arg value="1" type="int" />
+		<constructor-arg value="40000.0" type="float" />
+	</bean>
+	
+
+</beans>
