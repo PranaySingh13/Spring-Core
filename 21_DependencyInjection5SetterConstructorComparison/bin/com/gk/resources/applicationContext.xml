@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="studentBean" class="com.gk.beans.Student">
+		<constructor-arg index="0" value="P-1" />
+		<constructor-arg index="1" value="Pranay" />
+		<constructor-arg index="2" value="Indore" />
+
+		<property name="sid" value="A-1" />
+		<property name="sname" value="Apoorva" />
+		<property name="saddr" value="Gwalior" />
+	</bean>
+</beans>
