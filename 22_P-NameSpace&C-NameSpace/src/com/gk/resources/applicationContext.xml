@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Assigning values with p namespace tags -->
+	<bean id="empBean" class="com.gk.beans.Employee" p:eid="E-1" 
+		p:ename="Pranay Singh" p:esal="150000.00" p:eaddr-ref="accBean"	/>
+	<bean id="accBean" class="com.gk.beans.Address" p:hno="6"
+		p:street="Dhar Kothi" p:city="Indore" p:state="M.P." p:country="India"/>	
+
+	<!-- If we assign both the property tags and p namespace to singleBean
+	then we get BeanDefinitionParsingException -->
+
+	<!-- Assigning property names with c namespace tags -->
+	<!-- First Way By providing with index of property name with c namespace tags -->
+	<bean id="stdBean" class="com.gk.beans.Student" c:_0="S-1"
+		c:_1="Apporva Singh" c:_2="Gwalior" c:_3-ref="crsBean"/>
+	<bean id="crsBean" class="com.gk.beans.Course" c:_0="C-1"
+		c:_1="Spring Cloud" c:_2="15000"/>
+	
+	<!-- 
+	Second Way By providing with property name with c namespace tags
+	
+	<bean id="stdBean" class="com.gk.beans.Student" c:sid="S-1"
+		c:sname="Apporva Singh" c:saddr="Gwalior" c:crs-ref="crsBean"/>
+	<bean id="crsBean" class="com.gk.beans.Course" c:cid="C-2"
+		c:cname="Spring Social" c:ccost="20000"/>
+	
+	-->
+	
+	<!-- If we assign both the constructor-arg tags and c namespace to singleBean
+	then we get BeanDefinitionParsingException
+	 -->
+		
+</beans>
