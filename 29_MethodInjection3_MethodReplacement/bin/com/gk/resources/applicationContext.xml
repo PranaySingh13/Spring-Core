@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- To achieve Method Replacement, we have to declare an user defined bean 
+	class with a method whose implementation we want to replace and we will provide 
+	new implementation for that method by declaring a class and by implementing "MethodReplacer" 
+	interface. -->
+	<bean id="methodReplacerImpl" class="com.gk.beans.MethodReplacerImpl" />
+
+	<bean id="course" class="com.gk.beans.Course">
+		<property name="cid" value="c-1" />
+		<property name="cname" value="core java" />
+		<property name="ccost" value="10000" />
+		
+		<!--Here we will give an intimation to IOC Container about to replace 
+		the existed method implementation with some other method dyanamic implementation. -->
+		<replaced-method name="getCourseDetails" replacer="methodReplacerImpl" />
+	</bean>
+
+</beans>
