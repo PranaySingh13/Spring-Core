@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="currentAccount" class="com.gk.beans.CurrentAccount" />
+	<bean id="savingsAccount" class="com.gk.beans.SavingsAccount" />
+	
+	<!-- Note that we had not provide implementation for factory classes in applicationContext.xml file -->
+	<!-- This Factory beans will tell the IOC Container that to look up the method for implementation for 
+		 respective beans calling at main application by the help of CG Lib(3rd Party Library) internally
+		 of spring framework by creating dynamically sub-classes.   
+		 -->
+	<bean id="currentAccountFactory" class="com.gk.factory.AccountFactory">
+		<lookup-method name="getAccount" bean="currentAccount"/>
+	</bean>
+	
+	<bean id="savingsAccountFactory" class="com.gk.factory.AccountFactory">
+		<lookup-method name="getAccount" bean="savingsAccount"/>
+	</bean>
+
+</beans>
