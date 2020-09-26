@@ -17,11 +17,20 @@ public class BeanConfig {
 		System.out.println("Bean Class Instantiated......");
 	}
 	
+	
+	/*
+	 *This methodName we have to provide in the argument of context.getBean() for
+	 * getting respective bean objects at main application.
+	 */
 	@Bean
 	public HelloBean helloBean() {
 		return new HelloBean();
 	}
 	
+	/*
+	 *This methodName we have to provide in the argument of context.getBean() for
+	 * getting respective bean objects at main application.
+	 */
 	@Bean
 	public WelcomeBean welcomeBean() {
 		WelcomeBean wb=new WelcomeBean();
