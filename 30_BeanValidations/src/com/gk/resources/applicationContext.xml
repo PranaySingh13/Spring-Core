@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userBean" class="com.gk.beans.User">
+	<!-- Providing wrong credentials for checking validation -->
+		<property name="uid" value="1" />
+		<property name="uname" value="" />
+		<property name="upwd" value="abc" />
+		<property name="usal" value="0" />
+		<property name="uage" value="15" />
+		<property name="uemail" value="pranay.singh.1393" />
+		<property name="umobile" value="9876543210" />
+	</bean>
+	<bean id="userValidator" class="com.gk.validator.UserValidator">
+		<property name="resource"
+			value="/com/gk/resources/message.properties" />
+	</bean>
+</beans>
