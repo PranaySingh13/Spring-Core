@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/gk/beans=ISO-8859-1
+encoding//src/com/gk/resources=ISO-8859-1
+encoding//src/com/gk/resources/abc_en_US.properties=ISO-8859-1
+encoding//src/com/gk/resources/abc_it_IT.properties=ISO-8859-1
+encoding//src/com/gk/resources/abc_zh_CN.properties=ISO-8859-1
+encoding//src/com/gk/resources_xml=ISO-8859-1
+encoding//src/com/gk/resources_xml/abc_it_IT.xml=ISO-8859-1
+encoding//src/com/gk/resources_xml/abc_zh_CN.xml=UTF-8
+encoding//src/com/gk/test/Test.java=UTF-8
+encoding/<project>=ISO-8859-1
