@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="empBean" class="com.gk.beans.Employee">
+		<property name="eno" value="1" />
+		<property name="ename" value="Pranay Singh" />
+		<property name="esal" value="100000.0" />
+		<!-- As we are providing whole address object at a time -->
+		<property name="eaddr" value="6-Dhar Kothi-Indore-M.P.-India" />
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+		<property name="customEditors"><!-- This property name is fixed -->
+			<map>
+				<entry key="com.gk.beans.EmployeeAddress"
+					value="com.gk.beans.EmployeeAddressEditor" />
+			</map>
+		</property>
+	</bean>
+</beans>
