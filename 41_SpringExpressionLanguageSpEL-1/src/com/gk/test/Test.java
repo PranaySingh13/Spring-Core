@@ -11,7 +11,7 @@ public class Test {
 		// Prepare Expression Parser for parsing and evaluate Expression
 		ExpressionParser parser = new SpelExpressionParser();
 
-		// Note:- It is able to represent single Expression
+		// Note:- It is able to represent single Expression(not value)
 		Expression expr = parser.parseExpression("10+20");
 
 		// To get expression result
